@@ -35,7 +35,7 @@ function SignUpPage() {
           ></input>
           <div className="flex flex-col w-full justify-center">
           <ConfirmSignUpButton />
-          <p>Already have account</p>
+          <p className="flex flex-col items-center justify-center">Already have account</p>
           <SignInButton />
           </div>
         </div>
