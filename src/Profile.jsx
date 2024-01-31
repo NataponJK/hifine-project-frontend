@@ -8,12 +8,20 @@ const Profile = () => {
           <img />
         </div>
         <div className="flex flex-wrap w-fit justify-center items-center">
-          <img className="w-1/3 bg-lime-400" alt="sample pull img" />
-          <img className="w-1/3 bg-red-500" alt="sample pull img" />
-          <img className="w-1/3 bg-teal-500" alt="sample pull img" />
-          <img className="w-1/3 bg-teal-500" alt="sample pull img" />
-          <img className="w-1/3 bg-lime-400" alt="sample pull img" />
-          <img className="w-1/3 bg-red-500" alt="sample pull img" />
+          {/* {media.map((image)=> {
+            return (
+              <img className="w-1/3" alt="image" key={image.id}/>
+            )})
+          } */}
+          <img className="w-1/3 bg-black" alt="image"/>
+          <img className="w-1/3 bg-white" alt="image"/>
+          <img className="w-1/3 bg-black" alt="image"/>
+          <img className="w-1/3 bg-white" alt="image"/>
+          <img className="w-1/3 bg-black" alt="image"/>
+          <img className="w-1/3 bg-white" alt="image"/>
+          <img className="w-1/3 bg-black" alt="image"/>
+          <img className="w-1/3 bg-white" alt="image"/>
+          <img className="w-1/3 bg-black" alt="image"/>
         </div>
       </div>
     </UserLayout>

@@ -4,7 +4,7 @@ const Navigation = () => {
   return (
     <ul className="flex justify-evenly h-full">
       <li className="flex w-1/3 bg-zinc-600 hover:bg-zinc-900">
-        <Link to="/UserHome" className="flex justify-center w-full">
+        <Link to="/Home" className="flex justify-center w-full">
           <button className="flex justify-center items-center w-full rounded">
             <span class="material-symbols-rounded" style={{ fontSize: 40 }}>
               Home
