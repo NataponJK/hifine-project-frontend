@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 
 import App from './App'
-import UserHome from './UserHome'
+import Home from './Home'
 import Profile from './Profile'
 import Lists from './Lists'
 import SignIn from './LoginComponents/SignIn'
@@ -36,8 +36,8 @@ const router = createBrowserRouter([
     element: <ForgotPassword />,
   },
   {
-    path: '/UserHome',
-    element: <UserHome />
+    path: '/Home',
+    element: <Home />
   },
   {
     path: '/Profile',
