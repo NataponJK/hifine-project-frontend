@@ -1,17 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import DropdownActivity from "./DropdownActivity";
-import { blacklist } from "validator";
 
-const SelectActivityButton = () => {
+const SelectActivityButton = ({ setActivityType, activities, activityType }) => {
   const [openDropdown, setOpenDropdown] = useState(false);
-  const [selectedActivity, setSelectedActivity] = useState({ symbol: '' , text: "Select Activity"});
   const drop = useRef(null);
 
   const handleOpenDropdown = (e) => {
     if (!e.target.closest(`.${drop.current.className}`) && openDropdown) {
       setOpenDropdown(false);
     }
-  }
+  };
   useEffect(() => {
     document.addEventListener("click", handleOpenDropdown);
     return () => {
@@ -28,22 +26,26 @@ const SelectActivityButton = () => {
         width: "auto",
         display: "inline-block",
         borderStyle: "solid",
-        borderWidth: '3px',
-        borderRadius: '8px',
+        borderWidth: "3px",
+        borderRadius: "8px",
       }}
     >
-      <button
-        className="flex rounded-lg items-center p-3"
-        onClick={() => {
-          setOpenDropdown((openDropdown) => !openDropdown);
-        }}
-      >
-        {selectedActivity.symbol && <img src={selectedActivity.symbol} alt="Symbol" />} {selectedActivity.text}
+       <button
+      className="flex rounded-lg items-center p-3"
+      onClick={() => {
+        setOpenDropdown((openDropdown) => !openDropdown);
+      }}
+    >
+      {activities.find(activity => activity.value === activityType)?.symbol && (
+          <img src={activities.find(activity => activity.value === activityType).symbol} alt="Symbol" />
+        )}{" "}
+        {activityType || "Select Activity"}
       </button>
       {openDropdown && (
         <DropdownActivity
           setOpenDropdown={setOpenDropdown}
-          setSelectedActivity={setSelectedActivity}
+          setActivityType={setActivityType}
+          activities={activities}
         />
       )}
     </div>
@@ -51,4 +53,3 @@ const SelectActivityButton = () => {
 };
 
 export default SelectActivityButton;
-

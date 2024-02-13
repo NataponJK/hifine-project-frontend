@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import DropdownEdit from "./DropdownEdit";
 
-const SelectEditButton = () => {
+const SelectEditButton = ({ editPost, deletePost }) => {
   const [openEdit, setOpenEdit] = useState(false);
   const dropEdit = useRef(null);
+
   function handleEditDropdown(e) {
-    if (!e.target.closest(`.${dropEdit.current.className}`) &&
-    openEdit
-    ) {setOpenEdit(false)}
+    if (!e.target.closest(`.${dropEdit.current.className}`) && openEdit) {
+      setOpenEdit(false);
+    }
   }
   useEffect(() => {
     document.addEventListener("click", handleEditDropdown);
@@ -27,16 +28,18 @@ const SelectEditButton = () => {
     >
       <button
         className="bg-blue-200 rounded-lg flex items-center"
-        onClick={() =>
-          setOpenEdit((openEdit) => !openEdit)
-        }
+        onClick={() => setOpenEdit((openEdit) => !openEdit)}
       >
         <span class="material-symbols-rounded" style={{ fontSize: 40 }}>
           more_vert
         </span>
       </button>
       {openEdit && (
-        <DropdownEdit setOpenEdit={setOpenEdit} />
+        <DropdownEdit
+          editPost={editPost}
+          deletePost={deletePost}
+          setOpenEdit={setOpenEdit}
+        />
       )}
     </div>
   );

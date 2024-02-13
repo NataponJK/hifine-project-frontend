@@ -1,6 +1,15 @@
 import SelectEditButton from "./SelectEditButton/SelectEditButtton";
 
-const PostCard = () => {
+const PostCard = ({
+  key,
+  id,
+  description,
+  duration,
+  distance,
+  activityType,
+  editPost,
+  deletePost,
+}) => {
   return (
     <div className="flex flex-col sm:w-[640px] w-screen h- mx-auto mt-2 bg-zinc-400 rounded-lg pt-2">
       <div className="flex bg-zince-800 text-white justify-between align-baseline px-2">
@@ -10,7 +19,7 @@ const PostCard = () => {
         </div>
         <div className="flex bg-green-200 gap-5 items-center">
           <img alt="activity icon" />
-          <SelectEditButton />
+          <SelectEditButton editPost={editPost} deletePost={deletePost} />
         </div>
       </div>
       <div className="flex justify-center">

@@ -1,6 +1,7 @@
 import Navigation from "./Navigation";
 
 const Navbar = () => {
+
   return (
     <div>
       <div className="h-[56px] flex items-center bg-[#D9D9D9]  border-b-[1px] border-zinc-3 00 px-2">
